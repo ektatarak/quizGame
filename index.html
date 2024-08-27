@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+
+<body>
+
+    <!-- Welcome Page -->
+    <div id="welcome" class="page">
+        <div class="welcome-container">
+            <div class="logo">
+                <img src="https://media.tekpon.com/2024/04/quizizz-for-work-logo.webp" alt="Quizizz Logo">
+            </div>
+        <h1>Welcome to the Quiz Game!</h1>
+        <p>Test your knowledge on various topics and challenge yourself with different levels!</p>
+        <button onclick="showPage('topics')">Start Quiz</button>
+        </div>
+    </div>
+
+    <!-- Topics and Levels Page -->
+    <div id="topics" class="page" style="display: none;">
+        <div class="topics-container">
+        <h1>Select a Topic and Level</h1>
+        <!-- <div class="box"> -->
+            <select id="topicSelect">
+                <option value="general">General Knowledge</option>
+                <option value="science">Science and Technology</option>
+                <option value="culture">Culture</option>
+            </select>
+            <select id="levelSelect">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <div class="second-button">
+            <button onclick="startQuiz()">Start Quiz</button>
+            </div>
+        </div>
+        </div>
+    
+        <!-- Quiz Page -->
+<div id="quiz" class="page" style="display: none">
+    <div class="quiz-container">
+        <h1 id="quizTopic"></h1>
+        <p id="question"></p>
+        <div id="options">
+            <button onclick="submitAnswer('a')">Option A</button>
+            <button onclick="submitAnswer('b')">Option B</button>
+            <button onclick="submitAnswer('c')">Option C</button>
+            <button onclick="submitAnswer('d')">Option D</button>
+        </div>
+        
+        <p id="score">Score: 0</p>
+        <div class="button-row">
+            <button id="backButton" onclick="goBack()">Back</button>
+            <button id="nextButton" style="display: none;" onclick="nextQuestion()">Next</button>
+        </div>
+        
+    </div>
+</div>
+
+    <!-- Results Page -->
+    <div id="results" class="page" style="display: none;">
+        <div class="results-container">
+        <h1>Quiz Results</h1>
+        <p id="resultSummary">You answered X out of Y questions correctly.</p>
+        <p id="percentage">Your score: Z%</p>
+        <button onclick="tryAgain()">Try Again</button>
+        <button onclick="goHome()">Go to Home</button>
+    </div>
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+
+</html>
